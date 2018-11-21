@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const TOKEN = 'NTEzNzY0MzM5MTAzMzAxNjQz.DtdUsg.tr9yYu4ql4ednyWipxAHeWBGKWE';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -104,4 +105,4 @@ client.on('guildMemberAdd', member => {
     member.guild.channels.get('513745826351284225').send(`Welcome ${client} to Beatbox Union!\nFor starters try to type !help.`); 
 });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
