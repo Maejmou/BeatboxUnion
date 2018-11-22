@@ -102,7 +102,7 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.get('513745826351284225').send(`Welcome ${client} to Beatbox Union!\nFor starters try to type !help.`); 
+    member.guild.channels.get('513745826351284225').send(`Welcome ${member} to Beatbox Union!\nFor starters try to type !help.`); 
 });
 
 client.login(TOKEN);
