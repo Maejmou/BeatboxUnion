@@ -136,7 +136,7 @@ client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "part") {
             que.push(message.author.username);
-            message.reply("You have been added to the Que!");
+            message.reply("You have been added to the Queue!");
         }
     }
 });
@@ -145,7 +145,7 @@ client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "partremove") {   
             que.splice( que.indexOf(message.author.username), 1 );
-            message.reply("You have been removed from the Que!");
+            message.reply("You have been removed from the Queue!");
         }   
     }
 });
@@ -155,7 +155,7 @@ client.on('message', message => {
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.startsWith("!" + "partremoveuser")) {   
             que.splice( que.indexOf(message.mentions.users.first().username), 1 );
-            message.reply("You have been removed from the Que " + message.mentions.users.first().username + "!");
+            message.reply("You have been removed from the Queue " + message.mentions.users.first().username + "!");
         }   
     }
     }
@@ -164,7 +164,7 @@ client.on('message', message => {
 client.on('message', message => {
     if(partstart){
     if(message.content.toLowerCase() == "!" + "partshow") {
-       message.reply("The current Que is:\n" + que);  
+       message.reply("The current Queue is:\n" + que);  
     }
 }
 });
