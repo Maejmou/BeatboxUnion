@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.content === 'ping') {
+  if (message.content === '!' + 'ping') {
     message.reply('PongPo!');
   }
 });
@@ -25,22 +25,24 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    let member = message.mentions.members.first();
     if(message.content.toLowerCase() == "!" + "beatboxer") {
         if(message.member.roles.has('513749637992153116')) {
             message.reply("You already are are a Beatboxer!");
         }else {
-            member.addRole('513749637992153116').catch(console.error);
+            message.member.addRole('513749637992153116').catch(console.error);
             message.reply("You have been assigned as a Beatboxer!");
         }
     }
 });
 
 client.on('message', message => {
+    let member = message.mentions.members.first();
     if(message.content.toLowerCase() == "!" + "instrumentalist") {
         if(message.member.roles.has('513750500513153037')) {
             message.reply("You already are are a Instrumentalist!");
         }else {
-            member.addRole('513750500513153037').catch(console.error);
+            message.member.addRole('513750500513153037').catch(console.error);
             message.reply("You have been assigned as a Instrumentalist!");
         }
     }
@@ -51,35 +53,38 @@ client.on('message', message => {
         if(message.member.roles.has('514850745674366985')) {
             message.reply("You already are are a Singer!");
         }else {
-            member.addRole('514850745674366985').catch(console.error);
+            message.member.addRole('514850745674366985').catch(console.error);
             message.reply("You have been assigned as a Singer!");
         }
     }
 });
 
 client.on('message', message => {
+    let member = message.mentions.members.first();
     if(message.content.toLowerCase() == "!" + "looper") {
         if(message.member.roles.has('513750146169831434')) {
             message.reply("You already are are a Looper!");
         }else {
-            member.addRole('513750146169831434').catch(console.error);
+            message.member.addRole('513750146169831434').catch(console.error);
             message.reply("You have been assigned as a Looper!");
         }
     }
 });
 
 client.on('message', message => {
+    let member = message.mentions.members.first();
     if(message.content.toLowerCase() == "!" + "member") {
         if(message.member.roles.has('513751951448604685')) {
             message.reply("You already are are a Member!");
         }else {
-            member.addRole('513751951448604685').catch(console.error);
+            message.member.addRole('513751951448604685');
             message.reply("You have been assigned as a Member!");
         }
     }
 });
 
 client.on('message', message => {
+    let member = message.mentions.members.first();
     if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.toLowerCase() == '!' + 'clearit'){
             async function clear() {
