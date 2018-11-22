@@ -20,7 +20,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content.toLowerCase() === '!' + 'help') {
-      message.reply('Here are some avalible commands:\n```1. !Help\n2. !Wadu\n3. !Ping\n4. !Beatboxer\n5. !Singer\n6. !Instrumentalist\n7. !Looper\n8. !Member```');
+      message.reply('Here are some avalible commands:\n```1. !Help -> Shows commands avalible for members\n2. !Wadu -> Hek!\n3. !Ping - PongPo!\n4. !Beatboxer -> Assignes you to a Beatboxer role.\n5. !Singer -> Assignes you to a Singer role.\n6. !Instrumentalist -> Assignes you to Instrumentalist role.\n7. !Looper -> Assignes you to Looper role.\n8. !Member -> Assignes you to Member role.```');
     }
 });
 
