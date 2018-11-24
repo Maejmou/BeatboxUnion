@@ -180,4 +180,14 @@ client.on('message', message => {
     }
 });
 
+//Flip a coin
+function coinFlip() {
+    return (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
+}
+client.on("message", message => {
+    if(message.content.toLowerCase() == "!" + "flipcoin") {
+        message.reply("It's" + " " +coinFlip() + "!");
+    }
+});
+
 client.login(TOKEN);
