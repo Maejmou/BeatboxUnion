@@ -111,7 +111,7 @@ client.on('guildMemberAdd', member => {
 });
 
 
-//part que
+//part Queueue
 var partstart = false;
 client.on('message', message => {
     if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
@@ -131,12 +131,12 @@ client.on('message', message => {
     }
 });
 
-var que = [];
+var Queueue = [];
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "part") {
-            que.push(message.author.username);
-            message.reply("You have been added to the Que!");
+            Queueue.push(message.author.username);
+            message.reply("You have been added to the Queueue!");
         }
     }
 });
@@ -144,8 +144,8 @@ client.on('message', message => {
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "partremove") {   
-            que.splice( que.indexOf(message.author.username), 1 );
-            message.reply("You have been removed from the Que!");
+            Queueue.splice( Queueue.indexOf(message.author.username), 1 );
+            message.reply("You have been removed from the Queueue!");
         }   
     }
 });
@@ -154,29 +154,25 @@ client.on('message', message => {
     if(partstart){
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.startsWith("!" + "partremoveuser")) {   
-            que.splice( que.indexOf(message.mentions.users.first().username), 1 );
-            message.reply("You have been removed from the Que " + message.mentions.users.first().username + "!");
+            Queueue.splice( Queueue.indexOf(message.mentions.users.first().username), 1 );
+            message.reply("You have been removed from the Queueue " + message.mentions.users.first().username + "!");
         }   
     }
     }
 });
 
 client.on('message', message => {
-    if(partstart){
     if(message.content.toLowerCase() == "!" + "partshow") {
-       message.reply("The current Que is:\n" + que);  
-    }
+       message.reply("The current Queueue is:\n" + Queueue);  
 }
 });
 
 client.on('message', message => {
-    if(partstart){
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.toLowerCase() == "!" + "partremoveall") {
-            que = [];
+            Queueue = [];
             message.reply("All parts have been removed!");
         }
-    }
     }
 });
 
