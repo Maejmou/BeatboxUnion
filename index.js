@@ -111,7 +111,7 @@ client.on('guildMemberAdd', member => {
 });
 
 
-//part Queueue
+//part Queue
 var partstart = false;
 client.on('message', message => {
     if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
@@ -131,12 +131,12 @@ client.on('message', message => {
     }
 });
 
-var Queueue = [];
+var Queue = [];
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "part") {
-            Queueue.push(message.author.username);
-            message.reply("You have been added to the Queueue!");
+            Queue.push(message.author.username);
+            message.reply("You have been added to the Queue!");
         }
     }
 });
@@ -144,8 +144,8 @@ client.on('message', message => {
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "partremove") {   
-            Queueue.splice( Queueue.indexOf(message.author.username), 1 );
-            message.reply("You have been removed from the Queueue!");
+            Queue.splice( Queue.indexOf(message.author.username), 1 );
+            message.reply("You have been removed from the Queue!");
         }   
     }
 });
@@ -154,7 +154,7 @@ client.on('message', message => {
     if(partstart){
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.startsWith("!" + "partremoveuser")) {   
-            Queueue.splice( Queueue.indexOf(message.mentions.users.first().username), 1 );
+            Queue.splice( Queue.indexOf(message.mentions.users.first().username), 1 );
             message.reply("You have been removed from the Queueue " + message.mentions.users.first().username + "!");
         }   
     }
@@ -163,14 +163,14 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.content.toLowerCase() == "!" + "partshow") {
-       message.reply("The current Queueue is:\n" + Queueue);  
+       message.reply("The current Queue is:\n" + Queue);  
 }
 });
 
 client.on('message', message => {
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.toLowerCase() == "!" + "partremoveall") {
-            Queueue = [];
+            Queue = [];
             message.reply("All parts have been removed!");
         }
     }
