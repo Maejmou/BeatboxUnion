@@ -165,7 +165,7 @@ client.on('message', message => {
     if(partstart){
         if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
         if(message.content.startsWith("!" + "partremoveuser")) {   
-            Queue.splice( Queue.indexOf(message.content().str.substring(16))), 1 );
+            Queue.splice( Queue.indexOf(), 1 );
             message.reply("You have been removed from the Queueue " + message.mentions.users.first().username + "!");
         }   
     }
