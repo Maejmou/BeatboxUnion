@@ -132,11 +132,16 @@ client.on('message', message => {
 });
 
 var que = [];
+
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "part") {
+            if (yourArray.indexOf("someString") > -1) {
+                message.reply("You are already in the Queue!");
+            } else {
             que.push(message.author.username);
             message.reply("You have been added to the Queue!");
+            }
         }
     }
 });
@@ -158,18 +163,6 @@ client.on('message', message => {
             message.reply("You have been removed from the Queue " + message.mentions.users.first().username + "!");
         }   
     }
-    }
-});
-
-client.on('message', message => {
-    if(partstart){
-        if(message.member.roles.has('513746280489549827' || '513747383683645460')) {
-            if(message.content.startsWith("!" + "x")) {
-                que.slice( que.indexOf("'" + message.content.substr(3) + "'"), 1);
-                console.log("'" + message.content.substr(3) + "'");
-                console.log(que);
-            }
-        }
     }
 });
 
