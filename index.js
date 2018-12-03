@@ -136,7 +136,7 @@ var que = [];
 client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "part") {
-            if (yourArray.indexOf("someString") > -1) {
+            if(que.indexOf(message.author.username) > -1) {
                 message.reply("You are already in the Queue!");
             } else {
             que.push(message.author.username);
