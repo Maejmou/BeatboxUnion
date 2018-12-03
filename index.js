@@ -152,13 +152,14 @@ client.on('message', message => {
             if(message.content.toLowerCase() == "!" + "part") {
              if(que.indexOf(message.author.username) > -1) {
                  message.reply("You are already removed from the Queue!");
-             } else {
+              } else {
                 que.splice( que.indexOf(message.author.username), 1 );
                  message.reply("You have been removed from the Queue!");
              }  
+            }
+        }
         }   
-    }
-});
+    });
 
 client.on('message', message => {
     if(partstart){
