@@ -150,10 +150,12 @@ client.on('message', message => {
     if(partstart){
         if(message.content.toLowerCase() == "!" + "partremove") { 
              if(que.indexOf(message.author.username) > -1) {
-                 message.reply("You are already removed from the Queue!");
+                que.splice( que.indexOf(message.author.username), 1 );
+                message.reply("You have been removed from the Queue!");
+               
               } else {
                 que.splice( que.indexOf(message.author.username), 1 );
-                 message.reply("You have been removed from the Queue!");
+                message.reply("You are already removed from the Queue!");
              }  
             }
         }   
